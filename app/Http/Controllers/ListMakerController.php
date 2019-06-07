@@ -8,7 +8,7 @@ class ListMakerController extends Controller
 {
     public function index()
     {   $navigation = view ('nav');
-        
+        $buttons = view ('songs/buttons');
         
         $songs = DB::select(
         'SELECT * 
@@ -16,7 +16,8 @@ class ListMakerController extends Controller
         ORDER BY `id` ASC');
 
         $list = view('list/list', [
-            'songs' => $songs
+            'songs' => $songs,
+            'buttons' => $buttons
         ]);
         
        return view('index',
