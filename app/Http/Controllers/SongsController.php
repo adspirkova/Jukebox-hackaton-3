@@ -114,14 +114,17 @@ class SongsController extends Controller
         }
  
         // prepare the edit form
+        $navigation = view('nav');
         $edit_form = view('forms/edit-form', [
             'record' => $record
+            
         ]);
         // dd($record);
         
  
         // put the form into the rest of the page
-        return view('/index', [
+        return view('index', [
+            'nav' => $navigation,
             'content' => $edit_form
         ]);
         
