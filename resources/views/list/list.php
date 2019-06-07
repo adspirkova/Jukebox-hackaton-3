@@ -1,3 +1,5 @@
+<?=$buttons?>
+
 <!-- used Bootstrap -->
 <table class="table">
 
