@@ -12,7 +12,7 @@ class ListMakerController extends Controller
         'SELECT * 
         FROM `songs` 
         ORDER BY `id` ASC');
-       return view('list/list',
+       return view('index',
        [
            'songs' => $songs
        ]);

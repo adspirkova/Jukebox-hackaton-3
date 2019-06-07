@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 18px;
+  }
+
+  body {
+    font-family: 'Crimson Text', serif;
+    margin:0;
+    width:100vw;
+    background-color: white;
+  }
+
+  nav{
+    position: relative;
+    display: flex;
+    flex-direction:row;
+    display:inline;
+    background-color:lightgrey;
+    font-family: 'Crimson Text', serif;
+    font-size: 20px;
+    height:20vh;
+    padding:1.5rem;
+    }
+
+    h1{
+      position:absolute;
+      font-family: 'Julius Sans One', sans-serif;
+      left:10%;
+      top:15%;
+      border:10px double grey;
+      /* letter-spacing: 0.2rem; */
+      padding:0.5rem;
+    }
+
+    ul{
+      position:absolute;
+      right:10%;
+      top:35%;
+      flex-direction: row;
+      list-style: none;     
+    }
+    
+    li{
+      display: inline-block;
+    }
+
+    ul li a{
+      color:black;
+    }
+
+    ul li a:hover {
+      color:#999;
+      text-decoration:none;
+      }
+  
+
+
+  main{
+    padding:3rem;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+
+  
