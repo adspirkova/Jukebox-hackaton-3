@@ -11,8 +11,8 @@ class ListMakerController extends Controller
         $songs = DB::select(
         'SELECT * 
         FROM `songs` 
-        ORDER BY `songName` ASC');
-       return view('forms/list/list',
+        ORDER BY `id` ASC');
+       return view('list/list',
        [
            'songs' => $songs
        ]);
