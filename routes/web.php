@@ -23,6 +23,7 @@ Route::any('/add', 'SongsController@edit');
 
 Route::any('/edit', 'SongsController@edit');
 
+
 Route::any('/delete', 'SongsController@delete');
 Route::any('/delete/delete', 'SongsController@delete');
 

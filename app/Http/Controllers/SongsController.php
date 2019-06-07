@@ -130,4 +130,91 @@ class SongsController extends Controller
         
     }
 
+    public function delete(Request $request)
+    {
+        $messages = [];
+
+        $id = $request->input('id', null);
+
+        if ($request->has('id')) {
+            // this is editing an existing record
+            $query = "
+                SELECT *
+                FROM `songs`
+                WHERE `id` = ?
+            ";
+            $record = DB::selectOne($query, [$id]);
+        } 
+        // now I have $record object !!
+
+        // if the form was submitted
+        if ($request->method() == 'POST') {
+ 
+            $valid = true;
+
+            
+ 
+            // update the data from request
+            $record->songName = $request->input('songName');
+            $record->videoCode = $request->input('videoCode');
+            $record->authorName = $request->input('authorName');
+            $record->HTMLcode = $request->input('HTMLcode');
+            // ...
+            if (!$record->songName) {
+                $messages[] = 'Please fill in the name';
+                $valid = false;
+            }
+            // save the data
+            if ($valid) {
+                if ($request->has('id')) {
+                    // update existing record
+                    $query = 
+                       "DELETE `songs`
+                       SET `songName` = ?,
+                       `videoCode` = ?,
+                       `authorName` = ?,
+                       `HTMLcode` = ?
+                       WHERE `id` = ?
+                           
+                    ";
+                    DB::delete($query, [
+                        $record->songName,
+                        $record->videoCode,
+                        $record->authorName,
+                        $record->HTMLcode,
+                        $record->id,
+                        // ...
+                    ]);
+                } 
+     
+                    // update the value of the autoincremented id
+                    $record->id = DB::getPdo()->lastInsertId();
+                    
+                // flash success message
+                Session::flash('success_message', 'OK!');
+    
+                // redirect to edit
+                return redirect('/delete/delete?id='.$record->id);
+            }
+            
+        }
+ 
+        // prepare the edit form
+        $navigation = view('nav');
+        $edit_form = view('forms/edit-form', [
+            'record' => $record
+            
+        ]);
+        // dd($record);
+        
+ 
+        // put the form into the rest of the page
+        return view('index', [
+            'nav' => $navigation,
+            'content' => $edit_form
+        ]);
+        
+    }
+
+
 }
