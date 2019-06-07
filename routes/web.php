@@ -21,5 +21,7 @@ Route::get('/songs', 'SongsController@hi');
 Route::get('/list', 'ListMakerController@index');
 Route::any('/add', 'SongsController@edit');
 
+Route::any('/edit', 'SongsController@edit');
+
 Route::any('/form-test-edit/edit', 'SongsController@edit');
 
