@@ -16,4 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/songs', 'SongsController@hi');
+Route::any('/form-test-edit', 'SongsController@edit');
+
+Route::any('/form-test-edit/edit', 'SongsController@edit');
+
