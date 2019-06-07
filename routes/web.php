@@ -17,5 +17,12 @@ Route::get('/', function () {
 
 Route::view('/form-test', 'forms/add-form');
 
+<<<<<<< HEAD
 Route::get('/songs', 'SongsController@hi');
 Route::get('/list', 'ListMakerController@index');
+=======
+Route::any('/form-test-edit', 'SongsController@edit');
+
+Route::any('/form-test-edit/edit', 'SongsController@edit');
+
+>>>>>>> adelabranch
