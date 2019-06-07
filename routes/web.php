@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::view('/form-test', 'forms/add-form');
 
 Route::get('/songs', 'SongsController@hi');
+Route::get('/list', 'ListMakerController@index');
