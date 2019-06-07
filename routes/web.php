@@ -15,5 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('/form-test', 'forms/add-form');
 
 Route::get('/songs', 'SongsController@hi');
