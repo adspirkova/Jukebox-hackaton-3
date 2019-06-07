@@ -1,5 +1,6 @@
 <?=$buttons?>
-
+<h2>List of songs</h2>
+<hr>
 <!-- used Bootstrap -->
 <table class="table">
 

@@ -4,5 +4,5 @@
 <a href="edit"><button type="button" class="btn btn-warning">Edit</button></a>
 <button type="button" class="btn btn-danger">Delete</button>
 <button type="button" class="btn btn-success">Play</button>
-<br><br>
+<br><br><br><br>
 
